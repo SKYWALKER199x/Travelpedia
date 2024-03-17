@@ -170,7 +170,7 @@ body.nav-active{overflow: hidden;}
   #REUSED STYLE
 \*-----------------------------------*/
 
-.containor { padding-inline: 16px; }
+.containor{padding-inline: 16px;}
 
 .btn {
   height: 50px;
@@ -220,7 +220,7 @@ body.nav-active{overflow: hidden;}
 
 .h2{font-size: var(--fontSize-2);}
 
-.h3{font-size: var(--transition-2);}
+.h3{font-size: var(--transition-4);}
 
 .img-cover{
   width: 100%;
@@ -231,6 +231,19 @@ body.nav-active{overflow: hidden;}
 
 .w-100{width: 100%;}
 
+.section-subtitle{
+  color: var(--text-majorelle-blue);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+}
+
+.section-title{margin-block: 10px;}
+
+.img-holder{
+  aspect-ratio: var(--width)/var(--height);
+  background-color: var(--bg-gainsboro);
+  overflow: hidden;
+}
 /*-----------------------------------*\
   #PRELOADER
 \*-----------------------------------*/
@@ -252,7 +265,7 @@ body.nav-active{overflow: hidden;}
   opacity: 0;
 }
 
-.preloader.img{
+.preloader .img{
   animation: bounce 800ms ease-in-out infinite alternate;
 }
 
@@ -277,7 +290,7 @@ body.nav-active{overflow: hidden;}
   animation: dropShadow 800ms ease-in-out infinite alternate;
 }
 
-@keyframes DropShadow {
+@keyframes dropShadow {
   0% {width: 40%;}
   100% {width: 80%;}
   
@@ -290,7 +303,7 @@ body.nav-active{overflow: hidden;}
   #HEADER
 \*-----------------------------------*/
 
-.header.containor{
+.header .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -318,9 +331,9 @@ body.nav-active{overflow: hidden;}
   100% {transform: translateY(0);}
 }
 
-.header.logo img{width: 160px;}
+.header .logo img{width: 160px;}
 
-.nav-toggle-btn {font-size: 3.2rem;}
+.nav-toggle-btn{font-size: 3.2rem;}
 
 .navbar{
   position: fixed;
@@ -376,12 +389,11 @@ body.nav-active{overflow: hidden;}
 }
 
 .navbar-link:is(:hover, :focus-visible, .active)::before{opacity: 1;}
-
-.navbar-link:is(:hover, :focus):not(.active){transform: translateX(10px);}
+.navbar-link:is(:hover, :focus-visible, .active) { transform: translateX(10px); }
 
 .header-action{
   margin-block-start: auto;
-  margin-block-start: 20px;
+  padding-block-start: 20px;
   border-block-start: 1px solid var(--border-gainsboro);
   display: flex;
   justify-content: space-around;
@@ -420,7 +432,7 @@ body.nav-active{overflow: hidden;}
 
 .hero{padding-block-start: 150px;}
 
-.hero.containor{
+.hero .container{
   display: grid;
   gap: 50px;
 }
@@ -439,9 +451,9 @@ body.nav-active{overflow: hidden;}
 
 .hero-title{margin-block: 20px;}
 
-.hero-title{margin-block-end: 30px;}
+.hero-text{margin-block-end: 30px;}
 
-.hero.btn-secondary{margin-block-end: 20px;}
+.hero .btn-secondary{margin-block-end: 20px;}
 
 .hero-btn{
   color: var(--text-gunmetal);
@@ -452,7 +464,7 @@ body.nav-active{overflow: hidden;}
   transition: var(--transition-1);
 }
 
-.hero-btn.btn-img{
+.hero-btn .btn-img{
   position: relative;
   width: 60px;
   height: 60px;
@@ -461,7 +473,7 @@ body.nav-active{overflow: hidden;}
   box-shadow: var(--shadow-1);
 }
 
-.hero-btn.img-cover{border-radius: inherit;}
+.hero-btn .img-covor{border-radius: inherit;}
 
 .hero-btn ion-icon{
   position: absolute;
@@ -480,18 +492,84 @@ body.nav-active{overflow: hidden;}
   #SERVICE
 \*-----------------------------------*/
 
+.service .container{
+  display: grid;
+  gap: 25px;
+}
 
+.service-card:nth-child(2){background-color: var(--bg-chrome-yellow-alpha-5);}
 
+.service-card:nth-child(3){background-color: var(--bg-red-salsa-alpha-5);}
 
+.service-card:nth-child(4){background-color: var(--bg-majorelle-blue-alpha-5);}
+
+.service-card{
+  padding: 25px 20px;
+  border-radius: var(--radius-20);
+}
+
+.service-card .card-title{margin-block: 10px 5px;}
 
 /*-----------------------------------*\
   #DESTINATION
 \*-----------------------------------*/
 
+.desti .section-title{margin-block-end: 40px;}
 
+.desti-list{
+  display: grid;
+  gap: 30px;
+}
 
+.desti-card .card-banner{
+  position: relative;
+  border-radius: var(--radius-30);
+}
 
+.desti-card:is(:hover,:focus-within) .img-cover{transform: scale(1.05);}
 
+.desti-card .card-price{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--bg-white);
+  color: var(--text-majorelle-blue);
+  font-weight: var(--weight-bold);
+  font-size: 1.8rem;
+  line-height: 5px 15px;
+  border-radius: var(--radius-pill);
+}
+
+.desti-card .card-title{
+  margin-block: 15px 5px;
+  transition: var(--transition-1);
+}
+
+.desti-card .card-title:is(:hover,:focus-visible) {color:var(--text-majorelle-blue);}
+
+.desti-card :is(.card-rating, .span){
+  display: flex;
+  align-items: center;
+}
+
+.desti-card .card-rating {
+  margin-block-start: 10px;
+  gap: 10px;
+}
+
+.desti-card .card-rating .span {
+  background-color: var(--bg-sunglow-alpha-10);
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.desti-card .card-rating ion-icon {color: var(--text-sunglow);}
+
+.desti .btn{
+  margin-inline: auto;
+  margin-block-start: 40px;
+}
 /*-----------------------------------*\
   #EXPERIENCE
 \*-----------------------------------*/
